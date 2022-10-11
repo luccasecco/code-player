@@ -1,7 +1,10 @@
+import { Player } from "./pages/Player"
+import { Subscribe } from "./pages/Subscribe"
+
 function App() {
 
   return (
-    <h1>Hello World</h1>
+    <Player />
   )
 }
 
