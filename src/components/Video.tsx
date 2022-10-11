@@ -1,14 +1,15 @@
 
 import { DiscordLogo } from "phosphor-react";
+import { useEffect, useState } from 'react';
+import ReactPlayer from "react-player";
+import { Option } from "./Option";
 
 export function Video() {
-
-
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
-    
+        <ReactPlayer url='https://www.youtube.com/watch?v=4YPkYFiz2IU&list=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ'  width="100%" height="100%"/>
         </div>
       </div>
 
@@ -16,7 +17,7 @@ export function Video() {
         <div className="flex items-start gap-16">
             <div className="flex-1">
               <h1 className="text-2xl font-bold ">
-              Video 1
+                
               </h1>
               <p className="mt-4 text-gray-200 leading-relaxed">
               Descrição
