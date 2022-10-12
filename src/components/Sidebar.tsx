@@ -4,9 +4,12 @@ import { Option } from "./Option";
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/playlistItems'
 
 interface IVdeos {
-  id?: string;
+  id: string;
   snippet: {
     title: string;
+    resourceId: {
+      videoId: string;
+    }
     thumbnails: {
       medium: {
         url: string;
@@ -18,8 +21,6 @@ interface IVdeos {
 }
 export function Sidebar(){
   const [videos, setVideos] = useState<IVdeos[]>([])
-
-  console.log(videos)
 
   useEffect(() => {
     async function getVideos(){
@@ -43,10 +44,9 @@ export function Sidebar(){
           return (
             <Option 
               key={video.id}
-              snippet={video.snippet}
-              
+              id={video.snippet.resourceId.videoId}
+              snippet={video.snippet} 
               />
-
           )
         })}
      
