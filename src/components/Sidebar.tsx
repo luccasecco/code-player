@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Button } from "./Button";
 import { Option } from "./Option";
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/playlistItems'
-
 interface IVdeos {
   id: string;
   snippet: {
@@ -36,24 +36,22 @@ export function Sidebar(){
         
     setVideos(data.items)
   }
-  
-
 
   return(
     <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
       <div className="flex justify-between font-bold text-2xl pb-6 mb-6 border-b border-gray-500">
-        <button 
-          className="w-28 h-8 bg-yellow-300 text-stone-900 text-base"
-          onClick={handleHapinnesChoice}
+        <Button 
+          color="yellow"
+          onOptionChange={handleHapinnesChoice}
         >
           Happines
-        </button>
-        <button 
-          className="w-28 h-8 bg-blue-300 text-stone-900 text-base"
-          onClick={handleHFocusChoice}
+        </Button>
+        <Button 
+          color="blue"
+          onOptionChange={handleHFocusChoice}
         >
           Focus
-        </button>
+        </Button>
       </div>
 
       <div className="flex flex-col gap-8">
