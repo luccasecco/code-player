@@ -7,6 +7,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<Subscribe />} />
       <Route path="/player" element={<Player />} />
+      <Route path="/player/option/:videoId" element={<Player />} />
     </Routes>
   )
 }
