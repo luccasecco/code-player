@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 interface IOption {
   id: string;
   snippet: {
@@ -17,7 +16,7 @@ interface IOption {
 export function Option(props : IOption){
   return(
     <Link to={`/player/option/${props.id}`}>
-      <div className={`rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500 transition-colors `}>
+      <div className='rounded border border-gray-500 p-4 mt-2 hover:border-green-500 transition-colors'>
           <header className="flex items-center justify-between">
             <img src={props.snippet.thumbnails.medium.url} alt="" />
           </header>

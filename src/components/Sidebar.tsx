@@ -22,22 +22,39 @@ interface IVdeos {
 export function Sidebar(){
   const [videos, setVideos] = useState<IVdeos[]>([])
 
-  useEffect(() => {
-    async function getVideos(){
-      const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
-      const data = await response.json()
+  async function handleHapinnesChoice(){
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+    const data = await response.json()
+  
+    setVideos(data.items)
+  }
 
-      setVideos(data.items)
-    }
+  async function handleHFocusChoice(){
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLnOC9rlyvdSl-XO9aNCcpiXZiRo6sKQZR&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
 
-    getVideos()
+    const data = await response.json()
+        
+    setVideos(data.items)
+  }
+  
 
-  }, [])
+
   return(
     <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
-      <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
-        Vídeos
-      </span>
+      <div className="flex justify-between font-bold text-2xl pb-6 mb-6 border-b border-gray-500">
+        <button 
+          className="w-28 h-8 bg-yellow-300 text-stone-900 text-base"
+          onClick={handleHapinnesChoice}
+        >
+          Happines
+        </button>
+        <button 
+          className="w-28 h-8 bg-blue-300 text-stone-900 text-base"
+          onClick={handleHFocusChoice}
+        >
+          Focus
+        </button>
+      </div>
 
       <div className="flex flex-col gap-8">
         {videos.map(video => {
