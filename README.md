@@ -7,7 +7,8 @@
 
 <hr />
 
-![home](https://user-images.githubusercontent.com/101674470/195415111-815ea982-2c00-4247-9552-59b38d52bc62.png)
+![code-player-home](https://user-images.githubusercontent.com/101674470/195602162-014d37a7-a3fc-40f3-b859-31eaf59baaa9.png)
+
 ![player](https://user-images.githubusercontent.com/101674470/195415126-ecef3ccb-3fd3-44cd-8423-6bf6ff45b532.png)
 
 <h2> AUTOR </h2>
