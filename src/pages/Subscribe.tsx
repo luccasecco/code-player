@@ -26,7 +26,7 @@ export function Subscribe(){
         <div className="p-8 bg-gray-700 border border-gray-500 rounded">
             <button 
               type="submit"
-              className="block w-40 bg-blue-500 uppercase py-4 rounded font-bold text-sm hover:bg-blue-700 transition-colors disabled:opacity-50 text-black"
+              className="block w-40 bg-blue-500 uppercase py-4 rounded font-bold text-sm hover:bg-blue-600 transition-colors disabled:opacity-50 text-black"
               onClick={handleStart}
             >
               Get Started
