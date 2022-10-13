@@ -8,7 +8,8 @@ export function Footer() {
           <span className="ml-5 text-xs text-gray-200">Lucca Secco | all rights reserved</span>
         </div>
         <div className="mr-8">
-          <a href="https://github.com/luccasecco" target="_blank" className="hover:text-yellow-400 transition-colors">
+          <a href="https://github.com/luccasecco" target="_blank" className="flex items-center justify-between text-xs gap-2 text-gray-200 hover:text-yellow-400 transition-colors">
+            Source code available 
             <GithubLogo size={25}/>
           </a>
         </div>
