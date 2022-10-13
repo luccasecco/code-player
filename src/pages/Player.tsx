@@ -5,16 +5,18 @@ import { Video } from "../components/Video";
 
 export function Player(){
   return(
-    <div className="flex flex-col min-h-screen">
+    <>
       <Header 
       childrenLeft="Growth"
       childrenRight="Vibration"
       />
+    <div className="flex flex-col min-h-screen w-[98%] m-r-auto">
       <main className="flex">
         <Video />
         <Sidebar />
       </main>
-        <Footer />
     </div>
+      <Footer />
+    </>
   )
 }
