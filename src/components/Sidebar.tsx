@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./Button";
 import { Option } from "./Option";
 
@@ -37,8 +37,19 @@ export function Sidebar(){
     setVideos(data.items)
   }
 
+  useEffect(() => {
+    async function getVideo(){
+      const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+      const data = await response.json()
+    
+      setVideos(data.items)
+    }
+
+    getVideo()
+  }, [])
+
   return(
-    <aside className="w-[348px] h-screen overflow-y-scroll bg-gray-700 p-6 border-l border-gray-600">
+    <aside className="w-[348px] h-screen overflow-y-scroll scrollbar-hide bg-gray-700 p-6 border-l border-gray-600">
       <div className="flex justify-between font-bold text-2xl pb-6 mb-6 border-b border-gray-500">
         <Button 
           color="yellow"
@@ -63,8 +74,7 @@ export function Sidebar(){
               snippet={video.snippet} 
               />
           )
-        })}
-     
+        })}  
       </div>
     </aside>
   )
