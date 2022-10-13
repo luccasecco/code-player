@@ -10,7 +10,12 @@ export function Video() {
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
-        <ReactPlayer url={`https://www.youtube.com/watch?v=${videoId}`}  width="100%" height="100%" />
+        <ReactPlayer 
+          url={videoId ? `https://www.youtube.com/watch?v=${videoId}` 
+          : 'https://www.youtube.com/watch?v=4YPkYFiz2IU&t=6s'}  
+          width="100%" 
+          height="100%" 
+        />
         </div>
       </div>
 
