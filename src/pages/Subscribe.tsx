@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import imgFrequency from '../assets/vibration.png'
+import { Button } from '../components/Button'
 import { Logo } from '../components/Logo'
 
 export function Subscribe(){
@@ -24,14 +25,13 @@ export function Subscribe(){
         </div>
 
         <div className="p-8 bg-gray-700 border border-gray-500 rounded">
-            <button 
-              type="submit"
-              className="block w-40 bg-blue-500 uppercase py-4 rounded font-bold text-sm hover:bg-blue-600 transition-colors disabled:opacity-50 text-black"
-              onClick={handleStart}
+            <Button 
+              color='blue'
+              onOptionChange={handleStart}
+              className="w-40 h-12 uppercase rounded font-bold text-sm"
             >
               Get Started
-            </button>
-        
+            </Button> 
         </div>
 
       </div>
