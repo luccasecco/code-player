@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
 
@@ -14,7 +15,8 @@ export function Video() {
           url={videoId ? `https://www.youtube.com/watch?v=${videoId}` 
           : 'https://www.youtube.com/watch?v=4YPkYFiz2IU&t=6s'}  
           width="100%" 
-          height="100%" 
+          height="100%"
+          controls={true}
         />
         </div>
       </div>
