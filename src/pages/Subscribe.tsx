@@ -28,7 +28,7 @@ export function Subscribe(){
             <Button 
               color='blue'
               onOptionChange={handleStart}
-              className="w-40 h-12 uppercase rounded font-bold text-sm"
+              className="w-40 h-12 uppercase rounded font-bold text-sm opacity-100 hover:bg-blue-400"
             >
               Get Started
             </Button> 
