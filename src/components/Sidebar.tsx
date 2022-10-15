@@ -23,23 +23,40 @@ export function Sidebar(){
   const [videos, setVideos] = useState<IVdeos[]>([])
 
   async function handleHapinnesChoice(){
-    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
     const data = await response.json()
   
     setVideos(data.items)
   }
 
-  async function handleHFocusChoice(){
-    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLnOC9rlyvdSl-XO9aNCcpiXZiRo6sKQZR&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+  async function handleFocusChoice(){
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLNIOIzEHtNJbXCOTAlbxazG1MwruX0Rg5&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
 
     const data = await response.json()
         
     setVideos(data.items)
   }
 
+  async function handleIntelligenceChoice(){
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLnOC9rlyvdSme5bPlMouftnawQoS0W6HC&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+
+    const data = await response.json()
+        
+    setVideos(data.items)
+  }
+
+  async function handleHealingChoice(){
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLqxOk5-J3bJPLKejLBJm14lWLUopdyg0u&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+
+    const data = await response.json()
+        
+    setVideos(data.items)
+  }
+  
+
   useEffect(() => {
     async function getVideo(){
-      const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+      const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLZCjSAnJZ-axfUgzAZlKYRQqsOPTm1TPZ&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
       const data = await response.json()
     
       setVideos(data.items)
@@ -50,7 +67,7 @@ export function Sidebar(){
 
   return(
     <aside className="w-[348px] h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-600 bg-gray-700 p-6 border-l border-gray-600">
-      <div className="flex justify-between font-bold text-2xl pb-6 mb-6 border-b border-gray-500">
+      <div className="grid grid-cols-2 gap-2 justify-between font-bold text-2xl pb-6 mb-6 border-b border-gray-500">
         <Button 
           color="yellow"
           onOptionChange={handleHapinnesChoice}
@@ -59,9 +76,21 @@ export function Sidebar(){
         </Button>
         <Button 
           color="blue"
-          onOptionChange={handleHFocusChoice}
+          onOptionChange={handleFocusChoice}
         >
           Focus
+        </Button>
+        <Button 
+          color="violet"
+          onOptionChange={handleIntelligenceChoice}
+        >
+          Intelligence
+        </Button>
+        <Button 
+          color="green"
+          onOptionChange={handleHealingChoice}
+        >
+          Healing
         </Button>
       </div>
 
