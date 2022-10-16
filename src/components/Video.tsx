@@ -21,7 +21,7 @@ export function Video() {
         </div>
       </div>
 
-      <div className="p-8 max-w-[1100px] mx-auto">
+      <div className="p-8 max-w-[1100px] mx-auto hidden md:block">
         <div className="flex items-center justify-center">
             <div className="mt-10 ">
               <img src={bgImg} className="w-96"/> 

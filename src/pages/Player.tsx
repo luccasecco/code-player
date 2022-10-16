@@ -11,7 +11,7 @@ export function Player(){
       childrenRight="Vibration"
       />
     <div className="flex flex-col min-h-screen w-[98%] m-r-auto">
-      <main className="flex">
+      <main className="flex flex-col md:flex-row">
         <Video />
         <Sidebar />
       </main>
