@@ -30,7 +30,7 @@ export function Sidebar(){
   }
 
   async function handleFocusChoice(){
-    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLNIOIzEHtNJbXCOTAlbxazG1MwruX0Rg5&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+    const response = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLnOC9rlyvdSl-XO9aNCcpiXZiRo6sKQZR&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
 
     const data = await response.json()
         
